@@ -1,0 +1,1494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+        }
+        img {
+            width: 75px;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            background-color: rgb(104, 166, 223);
+            color: rgb(227, 232, 238);
+            padding: 10px 30px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .brand {
+            display: flex;
+            align-items: center;
+        }
+        .menu {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            border-radius: 30px;
+        }
+        .menu a {
+            color: rgb(255, 249, 249);
+            text-decoration: none;
+            padding: 10px;
+            transition: 0.5s;
+        }
+        .menu a:hover{
+            color: rgb(255, 255, 255);
+            background-color: rgb(40, 133, 200);
+            padding: 10px;
+            border-radius: 10px;
+            transform: translateY(-5px)
+            
+        }
+        .icon {
+            color: aliceblue;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+#home {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    min-height: 600px;
+    overflow: hidden;
+    background-color: #102c46;
+    scroll-margin-top: 80px;
+}
+
+#home video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.home-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    padding: 50px 8%;
+    background: linear-gradient(
+        90deg,
+        rgba(5, 24, 43, 0.92),
+        rgba(5, 35, 60, 0.75),
+        rgba(5, 35, 60, 0.15)
+    );
+}
+
+.home-content {
+    max-width: 700px;
+    color: white;
+    animation: homeFadeIn 1.2s ease;
+}
+
+.home-content h4 {
+    color: #64c8ff;
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 4px;
+    margin-bottom: 20px;
+}
+
+.home-content h1 {
+    font-size: clamp(45px, 7vw, 85px);
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 25px;
+}
+
+.home-content h1 span {
+    color: #64c8ff;
+}
+
+.home-content p {
+    max-width: 580px;
+    font-size: 17px;
+    line-height: 1.8;
+    color: #e1edf7;
+    margin-bottom: 30px;
+}
+
+.home-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 45px;
+}
+
+.btn-shop,
+.btn-service {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 14px 28px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+
+.btn-shop {
+    color: white;
+    background-color: #1689d4;
+    border: 2px solid #1689d4;
+}
+
+.btn-shop:hover {
+    color: white;
+    background-color: #0870b5;
+    transform: translateY(-4px);
+}
+
+.btn-service {
+    color: white;
+    border: 2px solid white;
+    background-color: transparent;
+}
+
+.btn-service:hover {
+    color: #102c46;
+    background-color: white;
+    transform: translateY(-4px);
+}
+
+.home-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.home-features div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.home-features i {
+    color: #64c8ff;
+    font-size: 22px;
+}
+
+@keyframes homeFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#service {
+    min-height: 100vh;
+    height: auto;
+    padding: 100px 7%;
+    color: white;
+    background: linear-gradient(
+        135deg,
+        #0b2944,
+        #15558a,
+        #237fbd
+    );
+    scroll-margin-top: 80px;
+}
+
+.service-container {
+    max-width: 1300px;
+    margin: auto;
+}
+
+.service-heading {
+    max-width: 700px;
+    margin: 0 auto 60px;
+    text-align: center;
+}
+
+.service-heading h5 {
+    color: #7bd3ff;
+    font-size: 15px;
+    font-weight: bold;
+    letter-spacing: 4px;
+    margin-bottom: 15px;
+}
+
+.service-heading h1 {
+    font-size: clamp(35px, 5vw, 50px);
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+.service-heading h1 span {
+    color: #7bd3ff;
+}
+
+.service-heading p {
+    color: #d7eafa;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+.service-cards {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 25px;
+}
+
+.service-card {
+    padding: 35px 25px;
+    background-color: rgba(255, 255, 255, 0.09);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    text-align: center;
+    transition: 0.4s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    background-color: rgba(255, 255, 255, 0.16);
+    border-color: #7bd3ff;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+.service-icon {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 25px;
+    border-radius: 50%;
+    color: white;
+    background-color: #1689d4;
+    font-size: 32px;
+    transition: 0.3s ease;
+}
+
+.service-card:hover .service-icon {
+    color: #12639c;
+    background-color: white;
+    transform: scale(1.08);
+}
+
+.service-card h3 {
+    font-size: 21px;
+    font-weight: bold;
+    margin-bottom: 18px;
+}
+
+.service-card p {
+    min-height: 100px;
+    color: #d7eafa;
+    font-size: 14px;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.service-card a {
+    display: inline-block;
+    color: #7bd3ff;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+
+.service-card a:hover {
+    color: white;
+}
+
+.service-card a i {
+    margin-left: 5px;
+    transition: 0.3s ease;
+}
+
+.service-card a:hover i {
+    transform: translateX(5px);
+}
+
+.service-bottom {
+    margin-top: 70px;
+    padding: 40px 20px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.15);
+    border-radius: 15px;
+}
+
+.service-bottom h2 {
+    font-size: clamp(25px, 4vw, 35px);
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.service-bottom p {
+    color: #d7eafa;
+    margin-bottom: 25px;
+}
+
+.service-btn {
+    display: inline-block;
+    padding: 13px 35px;
+    color: white;
+    background-color: #1689d4;
+    border-radius: 8px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.service-btn:hover {
+    color: #12639c;
+    background-color: white;
+    transform: translateY(-3px);
+}
+
+@media (max-width: 1100px) {
+    .service-cards {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .service-card p {
+        min-height: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    #home {
+        min-height: 650px;
+    }
+
+    .home-overlay {
+        padding: 40px 6%;
+        background: rgba(5, 24, 43, 0.78);
+    }
+
+    .home-content h4 {
+        font-size: 14px;
+        letter-spacing: 3px;
+    }
+
+    .home-content h1 {
+        font-size: 48px;
+    }
+
+    .home-content p {
+        font-size: 15px;
+    }
+
+    .home-features {
+        gap: 18px;
+    }
+
+    .home-features div {
+        font-size: 12px;
+    }
+
+    #service {
+        padding: 75px 6%;
+    }
+
+    .service-heading {
+        margin-bottom: 40px;
+    }
+
+    .service-cards {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .service-card {
+        padding: 30px 20px;
+    }
+
+    .service-bottom {
+        margin-top: 45px;
+    }
+}
+
+@media (max-width: 400px) {
+    .home-content h1 {
+        font-size: 39px;
+    }
+
+    .home-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .home-features {
+        flex-direction: column;
+    }
+}
+
+        
+        #product {
+            color: aliceblue;
+            background-color: rgb(34, 97, 156);
+            height: 100vh;
+            padding-top: 110px;
+        }
+        #service {
+            color: aliceblue;
+            background-color: rgb(59, 139, 213);
+            height: 100vh;
+            padding-top: 110px;
+        }
+#contact {
+    min-height: 100vh;
+    height: auto;
+    padding: 110px 7% 70px;
+    color: white;
+    background: linear-gradient(135deg, #0b2944, #15558a, #237fbd);
+    scroll-margin-top: 80px;
+}
+
+.contact-container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.contact-heading {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.contact-heading h1 {
+    font-size: 42px;
+    font-weight: 800;
+    margin-bottom: 15px;
+}
+
+.contact-heading p {
+    font-size: 16px;
+    color: #d7eafa;
+}
+
+.contact-content {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 30px;
+    align-items: start;
+}
+
+.contact-card {
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.09);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+}
+
+.contact-card h2 {
+    text-align: center;
+    font-size: 25px;
+    font-weight: 700;
+    margin-bottom: 25px;
+}
+
+.contact-info {
+    text-align: center;
+    line-height: 2;
+    margin-bottom: 20px;
+}
+
+.contact-info i {
+    color: #7bd3ff;
+    margin-right: 8px;
+}
+
+.contact-button {
+    display: block;
+    width: fit-content;
+    margin: 20px auto 0;
+    padding: 12px 25px;
+    color: white;
+    background: #1689d4;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.contact-button:hover {
+    background: #0870b5;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-form label {
+    font-weight: 600;
+    margin-bottom: -8px;
+}
+
+.contact-form input,
+.contact-form select {
+    width: 100%;
+    padding: 11px;
+    border: 1px solid #cbd5e1;
+    border-radius: 7px;
+    background: white;
+    color: #263b4e;
+    box-sizing: border-box;
+}
+
+.contact-form .gender-options {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.contact-form .gender-options label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin: 0;
+    font-weight: normal;
+}
+
+.contact-form .gender-options input {
+    width: auto;
+}
+
+.contact-form .agree {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.contact-form .agree input {
+    width: auto;
+}
+
+.contact-form button {
+    width: 100%;
+    padding: 12px;
+    color: white;
+    background: #1689d4;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background: #0870b5;
+}
+
+@media (max-width: 768px) {
+    #contact {
+        padding: 80px 5% 50px;
+    }
+
+    .contact-content {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-heading h1 {
+        font-size: 32px;
+    }
+}
+        #about {
+            color: aliceblue;
+            background-color: rgb(79, 126, 169);
+            height: 100vh;
+            padding-top: 110px;
+        }
+        #product
+        {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            margin-top: -80px;
+            background-image: url(Untitled-1.png);
+            object-fit: cover;
+            object-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        h2 {
+            text-align: center;
+            font-size: 30px;
+            margin-bottom: 30px;
+        }
+        ul {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 50px;
+            list-style: none;
+
+        }  
+        ul li {
+            display: block;
+            width: 150px;
+            height: 50px;
+            background-color: rgb(73, 108, 141);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            outline: 2px  solid rgb(32, 54, 74);
+            transition: all 0.5s ease;
+        }
+        ul li a{
+            text-decoration: none;
+            color: white;
+        }
+        ul li:hover{
+        
+            background-color: rgb(31, 81, 81);
+        }
+
+
+#product {
+    width: 100%;
+    height: auto;
+    min-height: 100vh;
+    padding: 110px 7% 70px;
+    margin-top: 0;
+    color: #fff;
+    background: linear-gradient(135deg, #0b2944, #15558a, #237fbd);
+    scroll-margin-top: 80px;
+}
+
+.product-container {
+    max-width: 1400px;
+    margin: auto;
+}
+
+.product-heading {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 35px;
+}
+
+.product-heading h5 {
+    color: #7bd3ff;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 4px;
+    margin-bottom: 15px;
+}
+
+.product-heading h1 {
+    font-size: clamp(35px, 5vw, 50px);
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+.product-heading h1 span {
+    color: #7bd3ff;
+}
+
+.product-heading p {
+    color: #d7eafa;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+.product-categories {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 40px;
+}
+
+.category-btn {
+    padding: 11px 24px;
+    color: white;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.category-btn:hover,
+.category-btn.active {
+    color: #fff;
+    background: #1689d4;
+    border-color: #1689d4;
+    transform: translateY(-2px);
+}
+
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 28px;
+}
+
+.product-card {
+    overflow: hidden;
+    color: #263b4e;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    transition: 0.35s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 18px 35px rgba(0, 0, 0, 0.25);
+}
+
+.product-card.hide {
+    display: none;
+}
+
+.product-image {
+    position: relative;
+    height: 260px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f2f7fb;
+    overflow: hidden;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: transform 0.4s ease;
+}
+
+.product-card:hover .product-image img {
+    transform: scale(1.08);
+}
+
+.product-badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    z-index: 2;
+    padding: 6px 12px;
+    color: #fff;
+    background: #1689d4;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.product-info {
+    padding: 22px;
+}
+
+.product-type {
+    color: #1689d4;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+}
+
+.product-info h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.product-rating {
+    color: #f5ad24;
+    font-size: 15px;
+    margin-bottom: 18px;
+}
+
+.product-rating span {
+    color: #7b8794;
+    font-size: 12px;
+}
+
+.product-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 15px;
+    border-top: 1px solid #e6edf2;
+}
+
+.product-bottom h4 {
+    color: #1689d4;
+    font-size: 23px;
+    font-weight: 800;
+    margin: 0;
+}
+
+.add-cart {
+    width: 43px;
+    height: 43px;
+    color: #fff;
+    background: #1689d4;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 17px;
+    transition: 0.3s;
+}
+
+.add-cart:hover {
+    background: #0b2944;
+    transform: scale(1.08);
+}
+
+
+.cart-summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 45px;
+    padding: 25px;
+    color: #fff;
+    background: rgba(4, 27, 46, 0.65);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+}
+
+.cart-summary i {
+    margin-right: 8px;
+    color: #7bd3ff;
+}
+
+.cart-summary strong {
+    color: #7bd3ff;
+}
+
+#clear-cart {
+    padding: 9px 18px;
+    color: #fff;
+    background: #d94343;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#clear-cart:hover {
+    background: #b52d2d;
+}
+
+
+@media (max-width: 992px) {
+    .product-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
+    }
+
+    #product {
+        padding: 90px 5% 60px;
+    }
+}
+
+@media (max-width: 576px) {
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .product-image {
+        height: 280px;
+    }
+
+    .product-heading p {
+        font-size: 14px;
+    }
+
+    .category-btn {
+        padding: 9px 16px;
+    }
+
+    .cart-summary {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+        
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="brand">
+            <img src="logo shop.png" alt="">
+            <h3>OVER SHOP</h3>
+        </div>
+        <div class="menu">
+            <a href="#home">Home</a>
+            <a href="#product">Product</a>
+            <a href="#service">Service</a>
+            <a href="#contact">Contact</a>
+            <a href="#about">About</a>
+        </div>
+        <div class="icon">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <i class="fa-solid fa-user"></i>
+        </div>
+    </header>
+
+    <section id="home">
+    <video src="FOOTBALL.MP4" autoplay muted loop playsinline></video>
+
+    <div class="home-overlay">
+        <div class="home-content">
+            <h4>WELCOME TO OVER SHOP</h4>
+
+            <h1>
+                YOUR GAME,<br>
+                <span>YOUR STYLE.</span>
+            </h1>
+
+            <p>
+                Discover premium football equipment, stylish jerseys,
+                and high-quality sports shoes.
+                Everything you need to play your best game starts here!
+            </p>
+
+            <div class="home-buttons">
+                <a href="#product" class="btn-shop">
+                    Shop Now <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+                <a href="#service" class="btn-service">
+                    Our Services
+                </a>
+            </div>
+
+            <div class="home-features">
+                <div>
+                    <i class="fa-solid fa-futbol"></i>
+                    <span>Quality Products</span>
+                </div>
+
+                <div>
+                    <i class="fa-solid fa-truck-fast"></i>
+                    <span>Fast Delivery</span>
+                </div>
+
+                <div>
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <span>Trusted Shop</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <section id="product">
+        <section id="product">
+    <div class="product-container">
+>
+        <div class="product-heading">
+            <h5>OUR COLLECTION</h5>
+            <h1>Our <span>Products</span></h1>
+            <p>
+                Discover quality football equipment, stylish jerseys,
+                and comfortable sports shoes at OVER SHOP.
+            </p>
+        </div>
+
+        <div class="product-categories">
+            <button class="category-btn active" data-category="all">All Products</button>
+            <button class="category-btn" data-category="ball">Balls</button>
+            <button class="category-btn" data-category="jersey">Jerseys</button>
+            <button class="category-btn" data-category="shoes">Shoes</button>
+        </div>
+
+        <div class="product-grid">
+
+            <div class="product-card" data-category="ball">
+                <div class="product-image">
+                    <span class="product-badge">Popular</span>
+                    <img src="ball1 (1).png" alt="Football">
+                </div>
+                <div class="product-info">
+                    <p class="product-type">FOOTBALL</p>
+                    <h3>Classic Football</h3>
+                    <div class="product-rating">★★★★★ <span>(5.0)</span></div>
+                    <div class="product-bottom">
+                        <h4>$15.00</h4>
+                        <button class="add-cart" data-name="Classic Football" data-price="15">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="ball">
+                <div class="product-image">
+                    <img src="ball1 (2).png" alt="Football">
+                </div>
+                <div class="product-info">
+                    <p class="product-type">FOOTBALL</p>
+                    <h3>Premium Football</h3>
+                    <div class="product-rating">★★★★★ <span>(4.8)</span></div>
+                    <div class="product-bottom">
+                        <h4>$25.00</h4>
+                        <button class="add-cart" data-name="Premium Football" data-price="25">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="ball">
+                <div class="product-image">
+                    <img src="ball1 (3).png" alt="Football">
+                </div>
+                <div class="product-info">
+                    <p class="product-type">FOOTBALL</p>
+                    <h3>Sport Football</h3>
+                    <div class="product-rating">★★★★☆ <span>(4.5)</span></div>
+                    <div class="product-bottom">
+                        <h4>$19.00</h4>
+                        <button class="add-cart" data-name="Sport Football" data-price="19">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="jersey">
+                <div class="product-image">
+                    <span class="product-badge">New</span>
+                    <img src="Jersey1.png" alt="Football Jersey">
+                </div>
+                <div class="product-info">
+                    <p class="product-type">JERSEY</p>
+                    <h3>Classic Jersey</h3>
+                    <div class="product-rating">★★★★★ <span>(4.9)</span></div>
+                    <div class="product-bottom">
+                        <h4>$25.00</h4>
+                        <button class="add-cart" data-name="Classic Jersey" data-price="25">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="jersey">
+                <div class="product-image">
+                    <img src="Jersey2.png" alt="Football Jersey">
+                </div>
+                <div class="product-info">
+                    <p class="product-type">JERSEY</p>
+                    <h3>Premium Jersey</h3>
+                    <div class="product-rating">★★★★☆ <span>(4.6)</span></div>
+                    <div class="product-bottom">
+                        <h4>$19.00</h4>
+                        <button class="add-cart" data-name="Premium Jersey" data-price="19">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="jersey">
+                <div class="product-image">
+                    <img src="Jersey3.png" alt="Football Jersey">
+                </div>
+                <div class="product-info">
+                    <p class="product-type">JERSEY</p>
+                    <h3>Sport Jersey</h3>
+                    <div class="product-rating">★★★★★ <span>(4.8)</span></div>
+                    <div class="product-bottom">
+                        <h4>$15.00</h4>
+                        <button class="add-cart" data-name="Sport Jersey" data-price="15">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+   
+            <div class="product-card" data-category="shoes">
+                <div class="product-image">
+                    <span class="product-badge">Popular</span>
+                    <img src="Shoes.png" alt="Sports Shoes">
+                </div>
+                <div class="product-info">
+                    <p class="product-type">SPORT SHOES</p>
+                    <h3>Classic Sports Shoes</h3>
+                    <div class="product-rating">★★★★★ <span>(4.9)</span></div>
+                    <div class="product-bottom">
+                        <h4>$25.00</h4>
+                        <button class="add-cart" data-name="Classic Sports Shoes" data-price="25">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="shoes">
+                <div class="product-image">
+                    <img src="Shpes2.png" alt="Sports Shoes">
+                </div>
+                <div class="product-info">
+                    <p class="product-type">SPORT SHOES</p>
+                    <h3>Premium Sports Shoes</h3>
+                    <div class="product-rating">★★★★☆ <span>(4.7)</span></div>
+                    <div class="product-bottom">
+                        <h4>$19.00</h4>
+                        <button class="add-cart" data-name="Premium Sports Shoes" data-price="19">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="shoes">
+                <div class="product-image">
+                    <img src="Shoes3.png" alt="Sports Shoes">
+                </div>
+                <div class="product-info">
+                    <p class="product-type">SPORT SHOES</p>
+                    <h3>Sport Training Shoes</h3>
+                    <div class="product-rating">★★★★★ <span>(4.8)</span></div>
+                    <div class="product-bottom">
+                        <h4>$15.00</h4>
+                        <button class="add-cart" data-name="Sport Training Shoes" data-price="15">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="cart-summary">
+            <div>
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span>Shopping Cart:</span>
+                <strong id="cart-count">0</strong> items
+            </div>
+
+            <div>
+                Total: <strong id="cart-total">$0.00</strong>
+            </div>
+
+            <button id="clear-cart">Clear Cart</button>
+        </div>
+
+    </div>
+</section>
+
+    </section>
+    
+    <section id="service">
+    <div class="service-container">
+
+        <div class="service-heading">
+            <h5>WHAT WE OFFER</h5>
+            <h1>Our <span>Services</span></h1>
+
+            <p>
+                We provide everything you need to enjoy your favorite sport.
+                Quality products and friendly service are our priorities.
+            </p>
+        </div>
+
+        <div class="service-cards">
+
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fa-solid fa-futbol"></i>
+                </div>
+
+                <h3>Quality Products</h3>
+
+                <p>
+                    Discover footballs, jerseys, and sports shoes
+                    selected to help you perform at your best.
+                </p>
+
+                <a href="#product">
+                    Explore Products
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fa-solid fa-truck-fast"></i>
+                </div>
+
+                <h3>Fast Delivery</h3>
+
+                <p>
+                    Shop conveniently and arrange delivery for your
+                    favorite sports products.
+                </p>
+
+                <a href="#contact">
+                    Contact Us
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fa-solid fa-tags"></i>
+                </div>
+
+                <h3>Affordable Prices</h3>
+
+                <p>
+                    Find sports equipment and stylish sportswear
+                    at prices that fit your budget.
+                </p>
+
+                <a href="#product">
+                    View Products
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fa-solid fa-headset"></i>
+                </div>
+
+                <h3>Customer Support</h3>
+
+                <p>
+                    Have questions about our products?
+                    Contact us and we will be happy to help.
+                </p>
+
+                <a href="#contact">
+                    Get in Touch
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<section id="contact">
+    <div class="contact-container">
+
+        <div class="contact-heading">
+            <h1>Contact Me</h1>
+            <p>Have questions? We are happy to help!</p>
+        </div>
+
+        <div class="contact-content">
+
+            <div class="contact-card">
+                <h2>Get In Touch</h2>
+
+                <div class="contact-info">
+                    <p>
+                        <i class="fa-solid fa-envelope"></i>
+                        Email: Neak.Oknha@gmail.com
+                    </p>
+
+                    <p>
+                        <i class="fa-solid fa-futbol"></i>
+                        Welcome to OVER SHOP
+                    </p>
+
+                    <p>
+                        Discover footballs, jerseys, and sports shoes.
+                    </p>
+                </div>
+
+                <a href="mailto:Neak.Oknha@gmail.com"
+                   class="contact-button">
+                    <i class="fa-solid fa-paper-plane"></i>
+                    Send Message
+                </a>
+            </div>
+
+          
+            <div class="contact-card">
+                <h2>Sign Up Form</h2>
+
+                <form class="contact-form">
+
+                    <label for="contact-name">Name:</label>
+                    <input
+                        type="text"
+                        id="contact-name"
+                        name="name"
+                        placeholder="Enter your name"
+                        required
+                    >
+
+                    <label for="contact-email">Email:</label>
+                    <input
+                        type="email"
+                        id="contact-email"
+                        name="email"
+                        placeholder="Enter your email"
+                        required
+                    >
+
+                    <label for="contact-password">Password:</label>
+                    <input
+                        type="password"
+                        id="contact-password"
+                        name="password"
+                        placeholder="Enter your password"
+                        required
+                    >
+
+                    <label>Gender:</label>
+                    <div class="gender-options">
+                        <label>
+                            <input type="radio" name="gender" value="Male">
+                            Male
+                        </label>
+
+                        <label>
+                            <input type="radio" name="gender" value="Female">
+                            Female
+                        </label>
+                    </div>
+
+                    <label for="contact-dob">Date of Birth:</label>
+                    <input
+                        type="date"
+                        id="contact-dob"
+                        name="dob"
+                    >
+
+                    <label for="contact-location">Where are you from?</label>
+                    <select id="contact-location" name="location">
+                        <option value="">Select your location</option>
+                        <option value="Phnom Penh">Phnom Penh</option>
+                        <option value="Kampot">Kampot</option>
+                        <option value="Kampong Thom">Kampong Thom</option>
+                        <option value="Other">Other</option>
+                    </select>
+
+                    <label for="contact-picture">Upload Picture:</label>
+                    <input
+                        type="file"
+                        id="contact-picture"
+                        name="picture"
+                        accept="image/*"
+                    >
+
+                    <label class="agree">
+                        <input type="checkbox" name="agree" required>
+                        I agree to the terms.
+                    </label>
+
+                    <button type="submit">
+                        <i class="fa-solid fa-user-plus"></i>
+                        Sign Up
+                    </button>
+
+                </form>
+            </div>
+
+        </div>
+    </div>
+</section>
+    <section id="about">
+        <h2 class="text-light text-center">About Me</h2>
+            <div class="d-flex justify-content-center align-items-center" >
+    <div class="card text-center" style="width: 350px;">
+        <img src="DSC_7557.JPG"
+             alt="Chan Sodavan"
+             class="mx-auto d-block mt-3"
+             style="width: 180px; height: 200px; object-fit: cover; border-radius: 15pt;">
+
+        <div class="card-body">
+            <h2>Chan Sodavan</h2>
+            <h5>Tel: 088 474 6515</h5>
+        </div>
+    </div>
+</div>
+    </section>
+    </script>
+</body>
+<script>
+    const categoryButtons = document.querySelectorAll(".category-btn");
+    const productCards = document.querySelectorAll(".product-card");
+
+    categoryButtons.forEach(button => {
+        button.addEventListener("click", () => {
+            categoryButtons.forEach(btn => btn.classList.remove("active"));
+            button.classList.add("active");
+
+            const category = button.dataset.category;
+
+            productCards.forEach(card => {
+                if (
+                    category === "all" ||
+                    card.dataset.category === category
+                ) {
+                    card.classList.remove("hide");
+                } else {
+                    card.classList.add("hide");
+                }
+            });
+        });
+    });
+
+    let cartCount = 0;
+    let cartTotal = 0;
+
+    const cartCountDisplay = document.getElementById("cart-count");
+    const cartTotalDisplay = document.getElementById("cart-total");
+    const addCartButtons = document.querySelectorAll(".add-cart");
+    const clearCartButton = document.getElementById("clear-cart");
+
+    addCartButtons.forEach(button => {
+        button.addEventListener("click", () => {
+            const price = Number(button.dataset.price);
+
+            cartCount++;
+            cartTotal += price;
+
+            cartCountDisplay.textContent = cartCount;
+            cartTotalDisplay.textContent = "$" + cartTotal.toFixed(2);
+
+            button.innerHTML = '<i class="fa-solid fa-check"></i>';
+
+            setTimeout(() => {
+                button.innerHTML = '<i class="fa-solid fa-cart-shopping"></i>';
+            }, 700);
+        });
+    });
+
+    clearCartButton.addEventListener("click", () => {
+        cartCount = 0;
+        cartTotal = 0;
+
+        cartCountDisplay.textContent = cartCount;
+        cartTotalDisplay.textContent = "$0.00";
+    });
+</script>
+
+</html>
